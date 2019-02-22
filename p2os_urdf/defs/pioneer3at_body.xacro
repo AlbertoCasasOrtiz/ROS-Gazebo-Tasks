@@ -344,7 +344,7 @@
 		<parent link="p3at_back_${suffix}_hub"/>
 		<child link="p3at_back_${suffix}_wheel"/>
 	</joint>
-	
+
   <gazebo reference="p3at_back_${suffix}_wheel">
     <kp>1000000.0</kp> <!-- kp and kd for rubber -->
     <kd>100.0</kd>
