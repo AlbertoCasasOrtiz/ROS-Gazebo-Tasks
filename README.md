@@ -1,7 +1,7 @@
 Description
 -----------
 
-Pioneer3AT with camera and keyboard control.
+Pioneer3AT with camera and keyboard control. For each exercise change world in pioneer3at.gazebo.launch.
 
 Exercise 1
 ----------
