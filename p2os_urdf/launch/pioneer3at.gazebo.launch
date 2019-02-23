@@ -11,7 +11,8 @@
 
   <!-- start Gazebo (TODO: add arguments) -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">	    
-	<arg name="world_name" value="$(find p2os_urdf)/worlds/slalom_bars.world"/>	    
+	<!--arg name="world_name" value="$(find p2os_urdf)/worlds/slalom_bars.world"/-->	    
+	<arg name="world_name" value="$(find p2os_urdf)/worlds/yellow_ball.world"/>	    
 	<arg name="gui" value="true"/>	  
   </include>	
 
