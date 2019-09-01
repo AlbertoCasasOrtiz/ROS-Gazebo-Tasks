@@ -1,56 +1,34 @@
-p2os: [![Build Status](https://travis-ci.org/allenh1/p2os.svg?branch=master)](https://travis-ci.org/allenh1/p2os)
-====
-
-P2OS driver for the Pioneer robots. This driver was originally written for Player/Stage by Brian Gerkey.
-
-p2os_driver
+Description
 -----------
 
-Essential to P2OS is the driver. This controls the interface for the P2OS controller. 
+Pioneer3AT with camera and keyboard control. For each exercise change world in pioneer3at.gazebo.launch.
 
-Jade Build:
+Exercise 1
+----------
 
-[![Build Status](http://build.ros.org/job/Jbin_uT32__p2os_driver__ubuntu_trusty_i386__binary/1/badge/icon)](http://build.ros.org/job/Jbin_uT32__p2os_driver__ubuntu_trusty_i386__binary/1/)
+Create a world with bars in slalom and operate a pioneer3at with a camera. First from world view and then from first person view.
 
-Kinetic Build:
+Execute ros+gazebo:
 
-[![Build Status](http://build.ros.org/job/Ksrc_uX__p2os_driver__ubuntu_xenial__source/badge/icon)](http://build.ros.org/job/Ksrc_uX__p2os_driver__ubuntu_xenial__source/)
+<code>roslaunch p2os_urdf pioneer3at.gazebo.launch</code>
 
-p2os_launch
------------
+Execute first person view with rqt:
 
-Relevant ROS launch files for the Robot. 
+<code>rosrun rqt_gui rqt_gui</code>
 
-Jade Build:
+Operate robot with keyboard:
 
-[![Build Status](http://build.ros.org/job/Jbin_uT32__p2os_launch__ubuntu_trusty_i386__binary/1/badge/icon)](http://build.ros.org/job/Jbin_uT32__p2os_launch__ubuntu_trusty_i386__binary/1/)
+<code>rosrun teleop_twist_keyboard teleop_twist_keyboard.py</code>
 
-Kinetic Build:
+Exercise 2
+----------
 
-[![Build Status](http://build.ros.org/job/Ksrc_uX__p2os_launch__ubuntu_xenial__source/badge/icon)](http://build.ros.org/job/Ksrc_uX__p2os_launch__ubuntu_xenial__source/)
+Make the robot follow objects of a determined color.
 
-p2os_teleop
------------
+Execute ros+gazebo:
 
-Control the robot with a joystick or keyboard. 
+<code>roslaunch p2os_urdf pioneer3at.gazebo.launch</code>
 
-Jade Build:
+Make robot follow objects:
 
-[![Build Status](http://build.ros.org/job/Jbin_uT32__p2os_teleop__ubuntu_trusty_i386__binary/1//badge/icon)](http://build.ros.org/job/Jbin_uT32__p2os_teleop__ubuntu_trusty_i386__binary/1/)
-
-Kinetic Build:
-
-[![Build Status](http://build.ros.org/job/Ksrc_uX__p2os_teleop__ubuntu_xenial__source/badge/icon)](http://build.ros.org/job/Ksrc_uX__p2os_teleop__ubuntu_xenial__source/)
-
-p2os_urdf
----------
-
-Allows you to see the robot within RVIZ for navigation purposes. 
-
-Jade Build:
-
-[![Build Status](http://build.ros.org/job/Jsrc_uT__p2os_urdf__ubuntu_trusty__source/2/badge/icon)](http://build.ros.org/job/Jsrc_uT__p2os_urdf__ubuntu_trusty__source/2/)
-
-Kinetic Build:
-
-[![Build Status](http://build.ros.org/job/Ksrc_uX__p2os_urdf__ubuntu_xenial__source/badge/icon)](http://build.ros.org/job/Ksrc_uX__p2os_urdf__ubuntu_xenial__source)
+<code>rosrun follow_color follow_color</code>
