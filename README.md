@@ -33,7 +33,7 @@ Make robot follow objects:
 
 <code>rosrun follow_color follow_color</code>
 
-Exercise 2
+Exercise 3
 ----------
 
 Make the robot follow a goal (Red ball) and avoid obstacles (Yellow and green balls) using potential fields method.
