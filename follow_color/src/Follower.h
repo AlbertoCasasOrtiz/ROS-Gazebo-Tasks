@@ -1,16 +1,16 @@
 #include <ros/ros.h>
 #include <image_transport/image_transport.h>
 
-class Follower {
+class GoToGoal {
 private:
     ros::NodeHandle nh;
-    image_transport::ImageTransport imageTransport;
-    image_transport::Subscriber imageSubscriber;
+    image_transport::ImageTransport imageTransportYellow;
+    image_transport::Subscriber imageSubscriberYellow;
 	ros::Publisher cmdVelPublisher;
 
     void imageCallback(const sensor_msgs::ImageConstPtr& msg);
 
 public:
-    Follower();
-    virtual ~Follower();
+    GoToGoal();
+    virtual ~GoToGoal();
 };

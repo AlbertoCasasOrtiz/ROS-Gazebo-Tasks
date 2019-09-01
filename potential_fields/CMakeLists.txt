@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(follow_color)
+project(potential_fields)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -107,8 +107,8 @@ find_package( OpenCV REQUIRED )
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES follow_color
-#  CATKIN_DEPENDS cv_bridge gazebo_ros image_transport roscpp sensor_msgs std_msgs
+#  LIBRARIES potential_fields
+#  CATKIN_DEPENDS cv_bridge image_transport roscpp sensor_msgs std_msgs
 #  DEPENDS system_lib
 )
 
@@ -126,7 +126,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/follow_color.cpp
+#   src/${PROJECT_NAME}/potential_fields.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -137,8 +137,8 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/follow_color_node.cpp)
-add_executable(follow_color src/Follower.cpp src/main.cpp)
+# add_executable(${PROJECT_NAME}_node src/potential_fields_node.cpp)
+add_executable(potential_fields src/Potential_Fields.cpp src/main.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -154,8 +154,8 @@ add_executable(follow_color src/Follower.cpp src/main.cpp)
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries(follow_color ${catkin_LIBRARIES})
-target_link_libraries(follow_color ${OpenCV_LIBS} )
+target_link_libraries(potential_fields ${catkin_LIBRARIES})
+target_link_libraries(potential_fields ${OpenCV_LIBS} )
 
 #############
 ## Install ##
@@ -171,11 +171,18 @@ target_link_libraries(follow_color ${OpenCV_LIBS} )
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
 
-## Mark executables and/or libraries for installation
-# install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_node
+## Mark executables for installation
+## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_executables.html
+# install(TARGETS ${PROJECT_NAME}_node
+#   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+# )
+
+## Mark libraries for installation
+## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_libraries.html
+# install(TARGETS ${PROJECT_NAME}
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#   RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
 # )
 
 ## Mark cpp header files for installation
@@ -197,7 +204,7 @@ target_link_libraries(follow_color ${OpenCV_LIBS} )
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_follow_color.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_potential_fields.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

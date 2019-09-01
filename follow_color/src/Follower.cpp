@@ -7,21 +7,21 @@
 
 static const std::string OPENCV_WINDOW = "Image window";
 
-Follower::Follower() : imageTransport(nh) {
-	imageSubscriber = imageTransport.subscribe("/pioneer3at/camera1/image_raw", 1,
-			&Follower::imageCallback, this);
+GoToGoal::GoToGoal() : imageTransportYellow(nh) {
+	imageSubscriberYellow = imageTransportYellow.subscribe("/pioneer3at/camera1/image_raw", 1,
+			&GoToGoal::imageCallback, this);
 	cmdVelPublisher = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
 
 	// Create a display window
 	cv::namedWindow(OPENCV_WINDOW);
 }
 
-Follower::~Follower() {
+GoToGoal::~GoToGoal() {
 	// Close the display window
 	cv::destroyWindow(OPENCV_WINDOW);
 }
 
-void Follower::imageCallback(const sensor_msgs::ImageConstPtr& msg) {
+void GoToGoal::imageCallback(const sensor_msgs::ImageConstPtr& msg) {
 	// convert the ROS image message to a CvImage
 	cv_bridge::CvImagePtr cv_ptr;
 	try {
