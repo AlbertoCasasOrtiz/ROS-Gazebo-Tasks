@@ -32,3 +32,16 @@ Execute ros+gazebo:
 Make robot follow objects:
 
 <code>rosrun follow_color follow_color</code>
+
+Exercise 2
+----------
+
+Make the robot follow a goal (Red ball) and avoid obstacles (Yellow and green balls) using potential fields method.
+
+Execute ros+gazebo:
+
+<code>roslaunch p2os_urdf pioneer3at.gazebo.launch</code>
+
+Make robot follow objects:
+
+<code>rosrun potential_fields potential_fields</code>
