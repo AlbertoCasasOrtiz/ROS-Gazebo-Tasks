@@ -253,7 +253,7 @@
 	  <updateRate>100.0</updateRate>
 	  <bodyName>base_link</bodyName>
 	  <topicName>base_pose_ground_truth</topicName>
-	  <gaussianNoise>0.01</gaussianNoise>
+	  <gaussianNoise>0.00</gaussianNoise>
 	  <frameName>map</frameName>-->
       <!-- initialize odometry for fake localization-->
 	  <xyzOffsets>0 0 0</xyzOffsets>
