@@ -92,12 +92,13 @@ void OdometryMap::odomCallback(const nav_msgs::Odometry::ConstPtr& msg){
 		if(OdometryMap::flag_store_memory == 1){
 			ROS_INFO("Turning...");
 			OdometryMap::flag_store_memory = 0;
-			OdometryMap::changeHeading(false);
+			// TODO depends of left or right.
+			OdometryMap::changeHeading(true);
 			ROS_INFO("Heading: [%s]", Map::DirToString(OdometryMap::heading).c_str());
 		}
 
 		// TODO Turn.
-		OdometryMap::moveRobotRight();
+		OdometryMap::moveRobotLeft();
 	
 		// Calculate heading angle in degrees.
 		geometry_msgs::Pose2D pose2d;
@@ -164,7 +165,7 @@ void OdometryMap::changeHeading(bool left){
 				OdometryMap::heading = Map::Dir::LEFT;
 				break;
 			case Map::Dir::LEFT:
-				OdometryMap::turnZ = 180;
+				OdometryMap::turnZ = 0;
 				OdometryMap::heading = Map::Dir::DOWN;
 				break;
 			case Map::Dir::DOWN:
@@ -172,7 +173,7 @@ void OdometryMap::changeHeading(bool left){
 				OdometryMap::heading = Map::Dir::RIGHT;
 				break;
 			case Map::Dir::RIGHT:
-				OdometryMap::turnZ = 0;
+				OdometryMap::turnZ = 180;
 				OdometryMap::heading = Map::Dir::UP;
 		}
 	} else {
