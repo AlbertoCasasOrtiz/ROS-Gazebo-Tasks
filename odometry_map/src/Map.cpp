@@ -14,15 +14,20 @@ Map::~Map() {
 }
 
 void Map::addPoint(int x, int y){
-	Map::map.insert(std::pair<int, int>(x, y));
+	Map::point point;
+	point.x = x;
+	point.y = y;
+
+	Map::map.push_back(point);
+
 	Map::size++;
 }
 
 void Map::printMap(){
 	std::ofstream file("map.txt");
-	std::map<int, int>::iterator itr;
-	for(itr = Map::map.begin(); itr != Map::map.end(); ++itr){
-		file << itr->first << " " << itr->second << "\n";
+	for(int i = 0; i < Map::map.size(); i++){
+		Map::point point = Map::map.at(i);
+		file << point.x << " " << point.y << "\n";
 	}
 	file.close();
 }
@@ -41,4 +46,14 @@ std::string Map::DirToString(Map::Dir dir){
 		default:
 			return "";
 	}
+}
+
+int Map::numAppearances(int x, int y){
+	int n = 0;
+	for(int i = 0; i < Map::map.size(); i++){
+		Map::point point = Map::map.at(i);
+		if(point.x == x && point.y == y)
+			n++;
+	}
+	return n;
 }

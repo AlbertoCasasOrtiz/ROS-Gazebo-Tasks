@@ -30,18 +30,24 @@ private:
 	void stopRobot();
 	void changeHeading(bool left);
 	void updateCurrentPoint();
+	int getYaw(const nav_msgs::Odometry::ConstPtr& msg);
+	void savePoint(const nav_msgs::Odometry::ConstPtr& msg);
+	void chooseDirection();
 
 	Map::Dir heading;
 	void exploreMap();
 
+	float error_turn;
+
 	int flag_forward;
 	int flag_turn;
 	int flag_store_memory;
+	int flag_chosen_direction;
 
 	float posX, posY;
 	float turnZ;
 
-	float currentX, currentY;
+	int currentX, currentY;
 public:
 	Map map;
 	OdometryMap(int argc, char **argv);

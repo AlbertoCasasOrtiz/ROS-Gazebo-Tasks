@@ -13,8 +13,13 @@ public:
 
 	enum class Dir{UP, DOWN, LEFT, RIGHT};
 
-	static std::string DirToString(Dir dir);
+	struct point{
+		int x;
+		int y;
+	};
 
+	static std::string DirToString(Dir dir);
+	int numAppearances(int x, int y);
 	void addPoint(int x, int y);
 	Commands* calculatePath(int origen_x, int origen_y, int destino_x, int destino_y);
 
@@ -24,7 +29,7 @@ public:
 	virtual ~Map();
 
 private:
-	std::map<int, int> map;
+	std::vector<point> map;
 	int size;
 };
 
