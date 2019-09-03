@@ -50,8 +50,8 @@ std::vector<std::string> Map::split(std::string str, std::string del){
 	    token = str.substr(0, pos);
 	    res.push_back(token);
 	    str.erase(0, pos + del.length());
+	    res.push_back(str);
 	}
-    res.push_back(str);
     return res;
 }
 
@@ -130,7 +130,7 @@ std::vector<Map::point> Map::getAdyacents(Map::point point){
 	for(int i = 0; i < Map::map.size(); i++){
 		Map::point point_aux = Map::map.at(i)->data;
 		if(Map::isAdyacent(point_aux, point))
-			adyacents.push_back(point);
+			adyacents.push_back(point_aux);
 	}
 	return adyacents;
 }

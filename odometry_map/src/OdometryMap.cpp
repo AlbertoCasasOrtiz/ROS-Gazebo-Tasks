@@ -25,15 +25,15 @@ OdometryMap::OdometryMap(int argc, char **argv) {
 	OdometryMap::flag_store_memory = 1;
 	OdometryMap::flag_turn = 0;
 	OdometryMap::flag_chosen_direction = 0;
-	OdometryMap::currentX = 0;
-	OdometryMap::currentY = 0;
+	OdometryMap::current.x = 0;
+	OdometryMap::current.y = 0;
 
 	OdometryMap::error_turn = 0;
 
 	// Show stored point.
-	ROS_INFO("Stored point ([%i], [%i])", OdometryMap::currentX, OdometryMap::currentY);
+	ROS_INFO("Stored point ([%i], [%i])", OdometryMap::current.x, OdometryMap::current.y);
 	// Add current point.
-	OdometryMap::map.addPoint(OdometryMap::currentX, OdometryMap::currentY);
+	OdometryMap::map.addPoint(current);
 
 	OdometryMap::posX, OdometryMap::posY, OdometryMap::turnZ= 0;
 
@@ -195,16 +195,16 @@ void OdometryMap::changeHeading(bool left){
 void OdometryMap::updateCurrentPoint(){
 	switch(OdometryMap::heading){
 		case Map::Dir::UP:
-			OdometryMap::currentX++;
+			OdometryMap::current.x++;
 			break;
 		case Map::Dir::LEFT:
-			OdometryMap::currentY--;
+			OdometryMap::current.y--;
 			break;
 		case Map::Dir::DOWN:
-			OdometryMap::currentX--;
+			OdometryMap::current.y--;
 			break;
 		case Map::Dir::RIGHT:
-			OdometryMap::currentY++;
+			OdometryMap::current.x++;
 			break;
 	}
 }
@@ -223,13 +223,13 @@ int OdometryMap::getYaw(const nav_msgs::Odometry::ConstPtr& msg){
 void OdometryMap::chooseDirection(){
 
 	// If already visited left, else right.
-	if(OdometryMap::map.numAppearances(OdometryMap::currentX, OdometryMap::currentY) == 1 && OdometryMap::flag_chosen_direction == 0){
+	if(OdometryMap::map.numAppearances(OdometryMap::current) == 1 && OdometryMap::flag_chosen_direction == 0){
 		OdometryMap::moveRobotLeft();
 		ROS_INFO("CHOSEN LEFT");
 		OdometryMap::changeHeading(true);
 		OdometryMap::flag_chosen_direction = 1;
 		ROS_INFO("Heading: [%s]", Map::DirToString(OdometryMap::heading).c_str());
-	}else if(OdometryMap::map.numAppearances(OdometryMap::currentX, OdometryMap::currentY) > 1 && OdometryMap::flag_chosen_direction == 0){
+	}else if(OdometryMap::map.numAppearances(OdometryMap::current) > 1 && OdometryMap::flag_chosen_direction == 0){
 		OdometryMap::moveRobotRight();
 		ROS_INFO("CHOSEN RIGHT");
 		OdometryMap::changeHeading(false);
@@ -246,9 +246,9 @@ void OdometryMap::savePoint(const nav_msgs::Odometry::ConstPtr& msg){
 	OdometryMap::updateCurrentPoint();
 
 	// Show stored point.
-	ROS_INFO("Stored point ([%i], [%i])", OdometryMap::currentX, OdometryMap::currentY);
+	ROS_INFO("Stored point ([%i], [%i])", OdometryMap::current.x, OdometryMap::current.y);
 	// Add current point.
-	OdometryMap::map.addPoint(OdometryMap::currentX, OdometryMap::currentY);
+	OdometryMap::map.addPoint(OdometryMap::current);
 
 
 	// Print map to file.

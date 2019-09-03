@@ -47,7 +47,7 @@ private:
 	float posX, posY;
 	float turnZ;
 
-	int currentX, currentY;
+	Map::point current;
 public:
 	Map map;
 	OdometryMap(int argc, char **argv);

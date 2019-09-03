@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(odometry_map)
+project(planning_trayectory)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -8,17 +8,14 @@ project(odometry_map)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  cv_bridge
-  gazebo_ros
-  image_transport
   roscpp
-  sensor_msgs
+  rospy
   std_msgs
 )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
-find_package( OpenCV REQUIRED )
+
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -73,7 +70,7 @@ find_package( OpenCV REQUIRED )
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   sensor_msgs#   std_msgs
+#   std_msgs
 # )
 
 ################################################
@@ -107,8 +104,8 @@ find_package( OpenCV REQUIRED )
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES odometry_map
-#  CATKIN_DEPENDS cv_bridge image_transport roscpp sensor_msgs std_msgs
+#  LIBRARIES planning_trayectory
+#  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 
@@ -121,12 +118,11 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
-  ${OpenCV_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/odometry_map.cpp
+#   src/${PROJECT_NAME}/planning_trayectory.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -137,8 +133,8 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/odometry_map_node.cpp)
-add_executable(odometry_map src/OdometryMap.cpp src/Map.cpp src/Node.cpp src/main_odometry_map.cpp)
+# add_executable(${PROJECT_NAME}_node src/planning_trayectory_node.cpp)
+add_executable(planning_trayectory src/PlanningTrayectory.cpp src/Map.cpp src/Node.cpp src/main_planning_trayectory.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -154,8 +150,8 @@ add_executable(odometry_map src/OdometryMap.cpp src/Map.cpp src/Node.cpp src/mai
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries(odometry_map ${catkin_LIBRARIES})
-target_link_libraries(odometry_map ${OpenCV_LIBS} )
+
+target_link_libraries(planning_trayectory ${catkin_LIBRARIES})
 
 #############
 ## Install ##
@@ -204,7 +200,7 @@ target_link_libraries(odometry_map ${OpenCV_LIBS} )
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_odometry_map.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_planning_trayectory.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
