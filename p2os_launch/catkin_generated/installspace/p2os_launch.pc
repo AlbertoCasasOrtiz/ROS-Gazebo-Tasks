@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: p2os_launch
+Description: Description of p2os_launch
+Version: 2.1.1
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

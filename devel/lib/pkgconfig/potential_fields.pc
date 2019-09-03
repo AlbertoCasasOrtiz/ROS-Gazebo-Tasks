@@ -1,0 +1,8 @@
+prefix=/home/alberto/catkin_ws/src/devel
+
+Name: potential_fields
+Description: Description of potential_fields
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/alberto/catkin_ws/src/devel/lib 
+Requires: 

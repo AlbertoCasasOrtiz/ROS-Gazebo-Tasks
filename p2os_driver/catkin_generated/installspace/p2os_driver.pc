@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: p2os_driver
+Description: Description of p2os_driver
+Version: 2.1.1
+Cflags: -I/usr/local/include
+Libs: -L/usr/local/lib -lp2os_driver
+Requires: p2os_msgs nav_msgs roscpp geometry_msgs diagnostic_updater tf std_msgs kdl_parser

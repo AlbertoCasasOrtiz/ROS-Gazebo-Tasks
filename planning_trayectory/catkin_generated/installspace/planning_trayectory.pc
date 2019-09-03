@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: planning_trayectory
+Description: Description of planning_trayectory
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

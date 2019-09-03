@@ -26,6 +26,8 @@ public:
 	std::vector<point> getAdyacents(Map::point point);
 	Node<point>* getNode(Map::point point);
 
+
+
 	// IO classes
 	void printMap();
 	void readMap();

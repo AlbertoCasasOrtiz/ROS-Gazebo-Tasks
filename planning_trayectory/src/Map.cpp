@@ -16,13 +16,7 @@ Map::Map() {
 	Map::size = 0;
 }
 
-Map::~Map() {
-	if(!Map::map.empty()){
-		for(int i = 0; i < Map::map.size(); i++){
-			delete Map::map.at(i);
-		}
-	}
-}
+Map::~Map() = default;
 
 void Map::addPoint(Map::point point){
 	Node<Map::point> *node = new Node<Map::point>();

@@ -1,0 +1,8 @@
+prefix=/home/alberto/catkin_ws/src/devel
+
+Name: planning_trayectory
+Description: Description of planning_trayectory
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/alberto/catkin_ws/src/devel/lib 
+Requires: 

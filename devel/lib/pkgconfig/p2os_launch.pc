@@ -1,0 +1,8 @@
+prefix=/home/alberto/catkin_ws/src/devel
+
+Name: p2os_launch
+Description: Description of p2os_launch
+Version: 2.1.1
+Cflags: 
+Libs: -L/home/alberto/catkin_ws/src/devel/lib 
+Requires: 

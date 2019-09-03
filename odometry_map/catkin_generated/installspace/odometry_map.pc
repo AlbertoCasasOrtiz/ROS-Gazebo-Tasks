@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: odometry_map
+Description: Description of odometry_map
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

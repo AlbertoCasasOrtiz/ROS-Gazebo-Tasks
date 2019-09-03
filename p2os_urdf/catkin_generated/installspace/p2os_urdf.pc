@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: p2os_urdf
+Description: Description of p2os_urdf
+Version: 2.1.1
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: tf urdf geometry_msgs sensor_msgs std_msgs kdl_parser

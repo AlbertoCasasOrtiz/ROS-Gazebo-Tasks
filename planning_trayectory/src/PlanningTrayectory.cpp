@@ -20,13 +20,7 @@ PlanningTrayectory::PlanningTrayectory(int argc, char **argv) {
 	    ROS_INFO("[%i], [%i]", path.at(i)->data.x, path.at(i)->data.y);
 	}
 
-    ros::init(argc, argv, "PlanningTrayectory");
-
-    ros::NodeHandle nh;
-
-    //TODO code here.
-
-	ros::spin();
+	PlanningTrayectory::printPath(path);
 }
 
 PlanningTrayectory::~PlanningTrayectory() {
@@ -82,4 +76,20 @@ std::vector<Node<Map::point>*> PlanningTrayectory::getPathFromLastNode(Node<Map:
     std::reverse(path.begin(), path.end());
 
     return path;
+}
+
+void PlanningTrayectory::printPath(std::vector<Node<Map::point> *> path) {
+    std::ofstream file("path.txt");
+    for(int i = 0; i < path.size(); i++){
+        Map::point point = path.at(i)->data;
+        file << point.x << " " << point.y << "\n";
+    }
+    file.close();
+
+}
+
+std::vector<PlanningTrayectory::Commands> PlanningTrayectory::calculateCommands(Map::point point_origin, Map::point point_goal) {
+
+
+    return std::vector<PlanningTrayectory::Commands>();
 }
