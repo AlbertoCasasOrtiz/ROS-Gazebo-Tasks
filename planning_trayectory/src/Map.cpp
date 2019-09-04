@@ -13,7 +13,6 @@
 #include "Node.h"
 
 Map::Map() {
-	Map::size = 0;
 	Map::heading = Dir::UP;
 }
 
@@ -25,7 +24,6 @@ void Map::addPoint(Map::point point){
 
 	Map::map.push_back(node);
 
-	Map::size++;
 }
 
 void Map::printMap(){

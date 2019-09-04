@@ -5,26 +5,29 @@ PlanningTrayectory::PlanningTrayectory(int argc, char **argv) {
 	PlanningTrayectory::map = new Map();
     PlanningTrayectory::map->readMap();
 
-
+    // Set origin point here.
     Map::point origin;
 	origin.x = 0;
 	origin.y = 0;
 
+	// Set goal point here.
 	Map::point goal;
 	goal.x = 5;
 	goal.y = -5;
 
+	// Get path and commands.
 	std::vector<Node<Map::point>*> path = PlanningTrayectory::getShortestPath(origin, goal);
     std::vector<PlanningTrayectory::Commands> commands = PlanningTrayectory::calculateCommands(path);
 
+    // Print path and commands in console.
     for(int i = 0; i < path.size(); i++){
         ROS_INFO("[%i], [%i]", path.at(i)->data.x, path.at(i)->data.y);
     }
-
     for(int i = 0; i < commands.size(); i++){
         ROS_INFO("[%s]", PlanningTrayectory::commandToString(commands.at(i)).c_str());
     }
 
+    // Print path and commands in a file-
 	PlanningTrayectory::printPath(path);
     PlanningTrayectory::printCommands(commands);
 }
@@ -36,14 +39,19 @@ PlanningTrayectory::~PlanningTrayectory() {
 std::vector<Node<Map::point>*> PlanningTrayectory::getShortestPath(Map::point point_origin, Map::point point_goal){
 	std::vector<Node<Map::point>*> path;
 	std::queue<Node<Map::point>*> queue;
+
+	// If origin not in map, abort.
 	if(PlanningTrayectory::map->numAppearances(point_origin) == 0){
 		ROS_ERROR("Given origin point ([%i], [%i] does not exist.", point_origin.x, point_origin.y);
 		return path;
 	}
+	// If goal not in map, abort.
 	if(PlanningTrayectory::map->numAppearances(point_goal) == 0){
         ROS_ERROR("Given goal point ([%i], [%i]) does not exist.", point_goal.x, point_goal.y);
 		return path;
 	}
+
+	//Breadth first search algorithm to detect the sortest path.
 	Node<Map::point>* origin = PlanningTrayectory::map->getNode(point_origin);
 	origin->marked = true;
 	queue.push(origin);
@@ -94,18 +102,6 @@ void PlanningTrayectory::printCommands(std::vector<Commands> commands) {
 
 }
 
-
-std::string PlanningTrayectory::commandToString(PlanningTrayectory::Commands command){
-    switch (command){
-        case Commands::FORWARD:
-            return "FORWARD";
-        case Commands::RIGHT:
-            return "RIGHT";
-        case Commands::LEFT:
-           return "LEFT";
-    }
-}
-
 void PlanningTrayectory::printPath(std::vector<Node<Map::point> *> path) {
     std::ofstream file("path.txt");
     for(int i = 0; i < path.size(); i++){
@@ -114,6 +110,18 @@ void PlanningTrayectory::printPath(std::vector<Node<Map::point> *> path) {
     }
     file.close();
 
+}
+
+
+std::string PlanningTrayectory::commandToString(PlanningTrayectory::Commands command){
+    switch (command){
+        case Commands::FORWARD:
+            return "FORWARD";
+        case Commands::RIGHT:
+            return "RIGHT";
+        case Commands::LEFT:
+            return "LEFT";
+    }
 }
 
 std::vector<PlanningTrayectory::Commands> PlanningTrayectory::calculateCommands(std::vector<Node<Map::point>*> path) {

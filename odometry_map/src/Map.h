@@ -43,7 +43,6 @@ public:
 	// IO functions
 	/// Print map into a file.
 	void printMap();
-
 	/// Read map from a file.
 	void readMap();
 
