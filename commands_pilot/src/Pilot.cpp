@@ -16,10 +16,6 @@ Pilot::Pilot(int argc, char **argv) {
 
     Pilot::readCommands();
 
-    for(int i = 0; i < Pilot::commands.size(); i++)
-        std::cout << Pilot::commands.at(i) << std::endl;
-
-/*
     ros::init(argc, argv, "pilot");
 
     ros::NodeHandle nh;
@@ -27,7 +23,7 @@ Pilot::Pilot(int argc, char **argv) {
     Pilot::cmdVelPublisher = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
     Pilot::odomSubscriber = nh.subscribe("/odom", 1, &Pilot::odomCallback, this);
 
-    ros::spin();*/
+    ros::spin();
 }
 
 int Pilot::getYaw(const nav_msgs::Odometry::ConstPtr &msg) {
@@ -67,10 +63,11 @@ void Pilot::stop() {
 }
 
 void Pilot::odomCallback(const nav_msgs::Odometry::ConstPtr &msg) {
-    if(Pilot::currentCommand < Pilot::commands.size()) {
+    if(!Pilot::commands.empty()) {
         // Go forward command.
-        if (Pilot::commands.at(Pilot::currentCommand) == "FORWARD") {
+        if (Pilot::commands.front() == "FORWARD") {
             if (Pilot::flag_init == 1) {
+                ROS_INFO("FORWARD");
                 Pilot::posX = msg->pose.pose.position.x;
                 Pilot::posY = msg->pose.pose.position.y;
                 Pilot::flag_init = 0;
@@ -78,17 +75,17 @@ void Pilot::odomCallback(const nav_msgs::Odometry::ConstPtr &msg) {
 
             Pilot::goForward();
 
-            ROS_INFO("Position: [%f], [%f]", posX, posY);
             // If advanced one unit...
             if (fabs(posX - msg->pose.pose.position.x) > 2.0 || fabs(posY - msg->pose.pose.position.y) > 2.0) {
                 Pilot::flag_init = 1;
-                Pilot::currentCommand++;
+                Pilot::commands.pop();
             }
         }
 
         //Turn left command.
-        if (Pilot::commands.at(Pilot::currentCommand) == "LEFT") {
+        if (Pilot::commands.front() == "LEFT") {
             if (Pilot::flag_init == 1) {
+                ROS_INFO("LEFT");
                 Pilot::updateHeading(true);
                 Pilot::flag_init = 0;
             }
@@ -99,14 +96,15 @@ void Pilot::odomCallback(const nav_msgs::Odometry::ConstPtr &msg) {
             // If end turning...
             if ((int) yaw == (int) Pilot::turnZ) {
                 Pilot::flag_init = 1;
-                Pilot::currentCommand++;
+                Pilot::commands.pop();
             }
         }
 
         //Turn right command.
-        if (Pilot::commands.at(Pilot::currentCommand) == "RIGHT") {
+        if (Pilot::commands.front() == "RIGHT") {
             if (Pilot::flag_init == 1) {
-                Pilot::updateHeading(true);
+                ROS_INFO("RIGHT");
+                Pilot::updateHeading(false);
                 Pilot::flag_init = 0;
             }
 
@@ -116,7 +114,7 @@ void Pilot::odomCallback(const nav_msgs::Odometry::ConstPtr &msg) {
             // If end turning...
             if ((int) yaw == (int) Pilot::turnZ) {
                 Pilot::flag_init = 1;
-                Pilot::currentCommand++;
+                Pilot::commands.pop();
             }
         }
     } else {
@@ -130,7 +128,7 @@ void Pilot::readCommands() {
     if (file.is_open()){
         while ( std::getline (file,line) )
         {
-            Pilot::commands.push_back(line);
+            Pilot::commands.push(line);
         }
         file.close();
     }

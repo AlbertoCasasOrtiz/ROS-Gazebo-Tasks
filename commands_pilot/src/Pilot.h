@@ -6,7 +6,7 @@
 #define SRC_PILOT_H
 
 #include <ros/ros.h>
-
+#include <queue>
 #include <nav_msgs/Odometry.h>
 
 
@@ -17,7 +17,7 @@ public:
 
     Pilot(int argc, char **argv);
 
-    std::vector<std::string> commands;
+    std::queue<std::string> commands;
 
     ros::Publisher cmdVelPublisher;
     ros::Subscriber odomSubscriber;

@@ -12,7 +12,7 @@ PlanningTrayectory::PlanningTrayectory(int argc, char **argv) {
 
 	Map::point goal;
 	goal.x = 5;
-	goal.y = 0;
+	goal.y = -5;
 
 	std::vector<Node<Map::point>*> path = PlanningTrayectory::getShortestPath(origin, goal);
     std::vector<PlanningTrayectory::Commands> commands = PlanningTrayectory::calculateCommands(path);
