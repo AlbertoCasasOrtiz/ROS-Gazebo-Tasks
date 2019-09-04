@@ -1,25 +1,15 @@
 #include "OdometryMap.h"
 
 #include <cv_bridge/cv_bridge.h>
-#include <sensor_msgs/image_encodings.h>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/highgui/highgui.hpp>
 #include <geometry_msgs/Twist.h>
 #include <ros/timer.h>
 #include <math.h>
 #include <ros/ros.h>
 #include <ros/timer.h>
-#include <std_msgs/Float64.h>
-#include <boost/bind.hpp>
 #include <tf/tf.h>
-#include <geometry_msgs/Pose2D.h>
 #include <geometry_msgs/PoseWithCovarianceStamped.h>
 
-static const std::string OPENCV_WINDOW = "Image window";
-
 OdometryMap::OdometryMap(int argc, char **argv) {
-	Map map;
-
 	OdometryMap::heading = Map::Dir::UP;
 	OdometryMap::flag_forward = 1;
 	OdometryMap::flag_store_memory = 1;
@@ -28,14 +18,17 @@ OdometryMap::OdometryMap(int argc, char **argv) {
 	OdometryMap::current.x = 0;
 	OdometryMap::current.y = 0;
 
+    OdometryMap::posX = 0;
+    OdometryMap::posY = 0;
+    OdometryMap::turnZ= 0;
 
-	// Show stored point.
+    // Show stored point.
 	ROS_INFO("Stored point ([%i], [%i])", OdometryMap::current.x, OdometryMap::current.y);
+
 	// Add current point.
 	OdometryMap::map.addPoint(current);
 
-	OdometryMap::posX, OdometryMap::posY, OdometryMap::turnZ= 0;
-
+	// ROS Starts here.
     ros::init(argc, argv, "OdometryMap");
 
     ros::NodeHandle nh;
@@ -49,7 +42,7 @@ OdometryMap::OdometryMap(int argc, char **argv) {
 
 
 void OdometryMap::rangeCallback(const sensor_msgs::Range::ConstPtr& msg){
-
+    // If obstacle at 0.6 metters and not turning, turn.
 	if(msg->range < 0.6 && OdometryMap::flag_turn == 0){
 		OdometryMap::flag_forward = 0;
 		OdometryMap::flag_turn = 1;
@@ -69,22 +62,12 @@ void OdometryMap::odomCallback(const nav_msgs::Odometry::ConstPtr& msg){
 			OdometryMap::flag_store_memory = 0;
 		}
 		// Move robot forward.
-		OdometryMap::moveRobotForward();
-		//ROS_INFO("Position ([%f], [%f])", msg->pose.pose.position.x, msg->pose.pose.position.y);
+		OdometryMap::goForward();
 		// If advanced one unit...
 		if(fabs(posX - msg->pose.pose.position.x) > 2.0 || fabs(posY - msg->pose.pose.position.y) > 2.0){
 			OdometryMap::savePoint(msg);
 		}
 	}
-	/*
-	// If stopped by range sensor, save current point if necessary.
-	if(OdometryMap::flag_turn == 1){
-		//ROS_INFO("Difference x: [%f] y: [%f]", fabs(fabs(posX) - fabs(msg->pose.pose.position.x)), fabs(fabs(posY) - fabs(msg->pose.pose.position.y)));
-		if(fabs(fabs(posX) - fabs(msg->pose.pose.position.x)) > 1.5 || fabs(fabs(posY) - fabs(msg->pose.pose.position.y)) > 1.5){
-			OdometryMap::savePoint(msg);
-		}
-	}
-*/
 
 	// If allowed to turn...
 	if(OdometryMap::flag_turn == 1){
@@ -118,7 +101,7 @@ void OdometryMap::odomCallback(const nav_msgs::Odometry::ConstPtr& msg){
 	}
 }
 
-void OdometryMap::moveRobotForward(){
+void OdometryMap::goForward(){
 	geometry_msgs::Twist cmd;
 	cmd.linear.x = 0.2;
 	cmd.angular.z = 0.0;
@@ -133,14 +116,14 @@ void OdometryMap::stopRobot(){
 	OdometryMap::cmdVelPublisher.publish(cmd);
 }
 
-void OdometryMap::moveRobotLeft(){
+void OdometryMap::turnLeft(){
 	geometry_msgs::Twist cmd;
 	cmd.linear.x = 0.0;
 	cmd.angular.z = 0.3;
 	OdometryMap::cmdVelPublisher.publish(cmd);
 }
 
-void OdometryMap::moveRobotRight(){
+void OdometryMap::turnRight(){
 	geometry_msgs::Twist cmd;
 	cmd.linear.x = 0.0;
 	cmd.angular.z = -0.3;
@@ -208,9 +191,6 @@ void OdometryMap::updateCurrentPoint(){
 }
 
 int OdometryMap::getYaw(const nav_msgs::Odometry::ConstPtr& msg){
-	geometry_msgs::Pose2D pose2d;
-	pose2d.x = msg->pose.pose.position.x;
-	pose2d.y = msg->pose.pose.position.y;
 	tf::Quaternion q(msg->pose.pose.orientation.x, msg->pose.pose.orientation.y, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
 	tf::Matrix3x3 m(q);
 	double roll, pitch, yaw;
@@ -222,13 +202,13 @@ void OdometryMap::chooseDirection(){
 
 	// If already visited left, else right.
 	if(OdometryMap::map.numAppearances(OdometryMap::current) == 1 && OdometryMap::flag_chosen_direction == 0){
-		OdometryMap::moveRobotLeft();
+		OdometryMap::turnLeft();
 		ROS_INFO("CHOSEN LEFT");
 		OdometryMap::changeHeading(true);
 		OdometryMap::flag_chosen_direction = 1;
 		ROS_INFO("Heading: [%s]", Map::DirToString(OdometryMap::heading).c_str());
 	}else if(OdometryMap::map.numAppearances(OdometryMap::current) > 1 && OdometryMap::flag_chosen_direction == 0){
-		OdometryMap::moveRobotRight();
+		OdometryMap::turnRight();
 		ROS_INFO("CHOSEN RIGHT");
 		OdometryMap::changeHeading(false);
 		OdometryMap::flag_chosen_direction = 1;
@@ -255,9 +235,6 @@ void OdometryMap::savePoint(const nav_msgs::Odometry::ConstPtr& msg){
 	posY = msg->pose.pose.position.y;
 }
 
-OdometryMap::~OdometryMap() {
-	// Close the display window
-	cv::destroyWindow(OPENCV_WINDOW);
-}
+OdometryMap::~OdometryMap() = default;
 
 

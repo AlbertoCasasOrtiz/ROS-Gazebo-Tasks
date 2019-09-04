@@ -150,9 +150,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fdbd14f-a042-4471-99d3-8d5ab08283d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/commands_pilot/src/Pilot.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/commands_pilot/src/Pilot.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands_pilot/src/Pilot.h" beforeDir="false" afterPath="$PROJECT_DIR$/commands_pilot/src/Pilot.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/odometry_map/src/Map.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/odometry_map/src/Map.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/odometry_map/src/Map.h" beforeDir="false" afterPath="$PROJECT_DIR$/odometry_map/src/Map.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/odometry_map/src/Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/odometry_map/src/Node.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/odometry_map/src/OdometryMap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/odometry_map/src/OdometryMap.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/odometry_map/src/OdometryMap.h" beforeDir="false" afterPath="$PROJECT_DIR$/odometry_map/src/OdometryMap.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
     <ignored path="$PROJECT_DIR$/../build/" />
@@ -180,35 +182,83 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/commands_pilot/src/Pilot.cpp">
+        <entry file="file://$PROJECT_DIR$/commands_pilot/src/Pilot.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="61" column="36" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="36" />
+            <state relative-caret-position="95">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="e#82#102#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/planning_trayectory/src/main_planning_trayectory.cpp">
+        <entry file="file://$PROJECT_DIR$/odometry_map/src/main_odometry_map.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="16" selection-start-column="16" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/odometry_map/src/Map.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="900">
+              <caret line="60" column="18" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/odometry_map/src/Node.cpp">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.cpp">
+        <entry file="file://$PROJECT_DIR$/odometry_map/src/Node.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+            <state relative-caret-position="285">
+              <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/commands_pilot/src/Pilot.h">
+        <entry file="file://$PROJECT_DIR$/odometry_map/src/OdometryMap.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="60">
+              <caret line="37" column="71" selection-start-line="37" selection-start-column="71" selection-end-line="37" selection-end-column="71" />
               <folding>
-                <element signature="e#82#102#0" expanded="true" />
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/odometry_map/src/OdometryMap.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="84" column="22" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
+              <folding>
+                <element signature="e#80#100#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/odometry_map/src/Map.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="935">
+              <caret line="65" selection-start-line="65" selection-end-line="65" />
+              <folding>
+                <element signature="e#36#56#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -220,6 +270,9 @@
     <findStrings>
       <find>posx</find>
       <find>head</find>
+      <find>moveRobotFor</find>
+      <find>moveRobotLe</find>
+      <find>moveRobotR</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -231,14 +284,17 @@
         <option value="$PROJECT_DIR$/planning_trayectory/src/Map.cpp" />
         <option value="$PROJECT_DIR$/planning_trayectory/src/Map.h" />
         <option value="$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.h" />
-        <option value="$PROJECT_DIR$/odometry_map/src/OdometryMap.h" />
-        <option value="$PROJECT_DIR$/odometry_map/src/OdometryMap.cpp" />
         <option value="$PROJECT_DIR$/commands_pilot/src/main_pilot.cpp" />
         <option value="$PROJECT_DIR$/follow_color/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/commands_pilot/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/commands_pilot/src/Pilot.h" />
         <option value="$PROJECT_DIR$/commands_pilot/src/Pilot.cpp" />
         <option value="$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.cpp" />
+        <option value="$PROJECT_DIR$/odometry_map/src/Map.cpp" />
+        <option value="$PROJECT_DIR$/odometry_map/src/OdometryMap.cpp" />
+        <option value="$PROJECT_DIR$/odometry_map/src/OdometryMap.h" />
+        <option value="$PROJECT_DIR$/odometry_map/src/Map.h" />
+        <option value="$PROJECT_DIR$/odometry_map/src/Node.h" />
       </list>
     </option>
   </component>
@@ -283,13 +339,13 @@
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="47feb1d3:ProjectViewModuleNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="planning_trayectory" type="462c0819:PsiDirectoryNode" />
+              <item name="odometry_map" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="47feb1d3:ProjectViewModuleNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="planning_trayectory" type="462c0819:PsiDirectoryNode" />
+              <item name="odometry_map" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -304,6 +360,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="ROS.plugin.achdjian.it" />
   </component>
   <component name="RunDashboard">
@@ -1041,12 +1098,12 @@
       <option name="presentableId" value="Default" />
       <updated>1567553718736</updated>
       <workItem from="1567553723165" duration="6117000" />
-      <workItem from="1567560175739" duration="3116000" />
+      <workItem from="1567560175739" duration="5816000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9233000" />
+    <option name="totallyTimeSpent" value="11933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="974" extended-state="6" />
@@ -1078,43 +1135,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/odometry_map/src/Map.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odometry_map/src/OdometryMap.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="191" lean-forward="true" selection-start-line="148" selection-end-line="191" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odometry_map/src/main_odometry_map.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odometry_map/src/OdometryMap.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270">
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#80#100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1139,16 +1159,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2385">
           <caret line="159" column="13" selection-start-line="159" selection-start-column="13" selection-end-line="159" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/odometry_map/src/Map.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="34" lean-forward="true" selection-start-line="1" selection-start-column="34" selection-end-line="2" selection-end-column="20" />
-          <folding>
-            <element signature="e#36#56#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1183,15 +1193,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands_pilot/src/Pilot.h">
+    <entry file="file://$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#82#102#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="240">
+          <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/planning_trayectory/src/main_planning_trayectory.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/commands_pilot/src/Pilot.cpp">
       <provider selected="true" editor-type-id="text-editor">
@@ -1200,13 +1210,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/planning_trayectory/src/main_planning_trayectory.cpp">
+    <entry file="file://$PROJECT_DIR$/commands_pilot/src/Pilot.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#82#102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/odometry_map/src/OdometryMap.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="37" column="71" selection-start-line="37" selection-start-column="71" selection-end-line="37" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/odometry_map/src/main_odometry_map.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/odometry_map/src/Map.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="60" column="18" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/odometry_map/src/OdometryMap.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="84" column="22" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
+          <folding>
+            <element signature="e#80#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/odometry_map/src/Map.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+          <folding>
+            <element signature="e#36#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/odometry_map/src/Node.cpp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.cpp">
+    <entry file="file://$PROJECT_DIR$/odometry_map/src/Node.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        <state relative-caret-position="285">
+          <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
         </state>
       </provider>
     </entry>

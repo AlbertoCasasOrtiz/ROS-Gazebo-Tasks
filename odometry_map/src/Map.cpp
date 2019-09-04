@@ -12,9 +12,7 @@
 #include <iterator>
 #include "Node.h"
 
-Map::Map() {
-	Map::size = 0;
-}
+Map::Map() = default;
 
 Map::~Map() {
 	if(!Map::map.empty()){
@@ -30,7 +28,6 @@ void Map::addPoint(Map::point point){
 
 	Map::map.push_back(node);
 
-	Map::size++;
 }
 
 void Map::printMap(){
@@ -42,7 +39,7 @@ void Map::printMap(){
 	file.close();
 }
 
-std::vector<std::string> Map::split(std::string str, std::string del){
+std::vector<std::string> Map::split(std::string str, const std::string& del){
 	std::vector<std::string> res;
 	size_t pos = 0;
 	std::string token;
