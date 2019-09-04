@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/p2os_publisher.dir/src/publisher.cc.o"
-  "../devel/lib/p2os_urdf/p2os_publisher.pdb"
-  "../devel/lib/p2os_urdf/p2os_publisher"
+  "/home/alberto/catkin_ws/devel/lib/p2os_urdf/p2os_publisher.pdb"
+  "/home/alberto/catkin_ws/devel/lib/p2os_urdf/p2os_publisher"
 )
 
 # Per-language clean rules from dependency scanning.

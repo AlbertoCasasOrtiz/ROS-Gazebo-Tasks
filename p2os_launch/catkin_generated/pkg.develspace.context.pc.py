@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "p2os_launch"
-PROJECT_SPACE_DIR = "/home/alberto/catkin_ws/src/devel"
+PROJECT_SPACE_DIR = "/home/alberto/catkin_ws/devel"
 PROJECT_VERSION = "2.1.1"

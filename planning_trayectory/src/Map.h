@@ -4,11 +4,11 @@
 #include <iostream>
 #include <fstream>
 #include "Node.h"
+
 #define POTENTIAL_FIELDS_SRC_MAP_H_
 
 class Map {
 public:
-
 	// Enums and structs.
 	enum class Status {UNKNOWN, CLEAR, BLOCKED, NUL};
 
@@ -26,7 +26,7 @@ public:
 	std::vector<point> getAdyacents(Map::point point);
 	Node<point>* getNode(Map::point point);
 
-
+	Dir heading;
 
 	// IO classes
 	void printMap();

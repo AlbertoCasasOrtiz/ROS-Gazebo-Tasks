@@ -14,6 +14,7 @@
 
 Map::Map() {
 	Map::size = 0;
+	Map::heading = Dir::UP;
 }
 
 Map::~Map() = default;
@@ -138,5 +139,21 @@ Node<Map::point>* Map::getNode(Map::point point){
 	}
 	return nullptr;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/potential_fields.dir/src/Potential_Fields.cpp.o"
   "CMakeFiles/potential_fields.dir/src/main.cpp.o"
-  "../devel/lib/potential_fields/potential_fields.pdb"
-  "../devel/lib/potential_fields/potential_fields"
+  "/home/alberto/catkin_ws/devel/lib/potential_fields/potential_fields.pdb"
+  "/home/alberto/catkin_ws/devel/lib/potential_fields/potential_fields"
 )
 
 # Per-language clean rules from dependency scanning.

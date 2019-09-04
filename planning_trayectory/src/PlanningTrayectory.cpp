@@ -15,12 +15,18 @@ PlanningTrayectory::PlanningTrayectory(int argc, char **argv) {
 	goal.y = 0;
 
 	std::vector<Node<Map::point>*> path = PlanningTrayectory::getShortestPath(origin, goal);
+    std::vector<PlanningTrayectory::Commands> commands = PlanningTrayectory::calculateCommands(path);
 
-	for(int i = 0; i < path.size(); i++){
-	    ROS_INFO("[%i], [%i]", path.at(i)->data.x, path.at(i)->data.y);
-	}
+    for(int i = 0; i < path.size(); i++){
+        ROS_INFO("[%i], [%i]", path.at(i)->data.x, path.at(i)->data.y);
+    }
+
+    for(int i = 0; i < commands.size(); i++){
+        ROS_INFO("[%s]", PlanningTrayectory::commandToString(commands.at(i)).c_str());
+    }
 
 	PlanningTrayectory::printPath(path);
+    PlanningTrayectory::printCommands(commands);
 }
 
 PlanningTrayectory::~PlanningTrayectory() {
@@ -78,6 +84,28 @@ std::vector<Node<Map::point>*> PlanningTrayectory::getPathFromLastNode(Node<Map:
     return path;
 }
 
+void PlanningTrayectory::printCommands(std::vector<Commands> commands) {
+    std::ofstream file("commands.txt");
+    for(int i = 0; i < commands.size(); i++){
+        PlanningTrayectory::Commands command = commands.at(i);
+        file << PlanningTrayectory::commandToString(command) << "\n";
+    }
+    file.close();
+
+}
+
+
+std::string PlanningTrayectory::commandToString(PlanningTrayectory::Commands command){
+    switch (command){
+        case Commands::FORWARD:
+            return "FORWARD";
+        case Commands::RIGHT:
+            return "RIGHT";
+        case Commands::LEFT:
+           return "LEFT";
+    }
+}
+
 void PlanningTrayectory::printPath(std::vector<Node<Map::point> *> path) {
     std::ofstream file("path.txt");
     for(int i = 0; i < path.size(); i++){
@@ -88,8 +116,66 @@ void PlanningTrayectory::printPath(std::vector<Node<Map::point> *> path) {
 
 }
 
-std::vector<PlanningTrayectory::Commands> PlanningTrayectory::calculateCommands(Map::point point_origin, Map::point point_goal) {
+std::vector<PlanningTrayectory::Commands> PlanningTrayectory::calculateCommands(std::vector<Node<Map::point>*> path) {
+    std::vector<PlanningTrayectory::Commands> commands;
+    for(int i = 1; i < path.size(); i++){
+        commands.push_back(PlanningTrayectory::nextPointCommand(path.at(i-1)->data, path.at(i)->data));
+    }
+
+    return commands;
+}
 
 
-    return std::vector<PlanningTrayectory::Commands>();
+PlanningTrayectory::Commands PlanningTrayectory::nextPointCommand(Map::point current, Map::point next){
+    if(next.x == current.x+1 && PlanningTrayectory::map->heading == Map::Dir::UP){
+        PlanningTrayectory::map->heading = Map::Dir::UP;
+        return PlanningTrayectory::Commands::FORWARD;
+    }
+    if(next.y == current.y-1 && PlanningTrayectory::map->heading == Map::Dir::UP){
+        PlanningTrayectory::map->heading = Map::Dir::LEFT;
+        return PlanningTrayectory::Commands::LEFT;
+    }
+    if(next.y == current.y+1 && PlanningTrayectory::map->heading == Map::Dir::UP){
+        PlanningTrayectory::map->heading = Map::Dir::RIGHT;
+        return PlanningTrayectory::Commands::RIGHT;
+    }
+
+    if(next.x == current.x+1 && PlanningTrayectory::map->heading == Map::Dir::LEFT){
+        PlanningTrayectory::map->heading = Map::Dir::UP;
+        return PlanningTrayectory::Commands ::RIGHT;
+    }
+    if(next.x == current.x-1 && PlanningTrayectory::map->heading == Map::Dir::LEFT){
+        PlanningTrayectory::map->heading = Map::Dir::DOWN;
+        return PlanningTrayectory::Commands ::LEFT;
+    }
+    if(next.y == current.y-1 && PlanningTrayectory::map->heading == Map::Dir::LEFT){
+        PlanningTrayectory::map->heading = Map::Dir::LEFT;
+        return PlanningTrayectory::Commands ::FORWARD;
+    }
+
+    if(next.x == current.x+1 && PlanningTrayectory::map->heading == Map::Dir::RIGHT){
+        PlanningTrayectory::map->heading = Map::Dir::UP;
+        return PlanningTrayectory::Commands ::LEFT;
+    }
+    if(next.x == current.x-1 && PlanningTrayectory::map->heading == Map::Dir::RIGHT){
+        PlanningTrayectory::map->heading = Map::Dir::DOWN;
+        return PlanningTrayectory::Commands ::RIGHT;
+    }
+    if(next.y == current.y+1 && PlanningTrayectory::map->heading == Map::Dir::RIGHT){
+        PlanningTrayectory::map->heading = Map::Dir::RIGHT;
+        return PlanningTrayectory::Commands ::FORWARD;
+    }
+
+    if(next.x == current.x-1 && PlanningTrayectory::map->heading == Map::Dir::DOWN){
+        PlanningTrayectory::map->heading = Map::Dir::DOWN;
+        return PlanningTrayectory::Commands ::FORWARD;
+    }
+    if(next.y == current.y+1 && PlanningTrayectory::map->heading == Map::Dir::DOWN){
+        PlanningTrayectory::map->heading = Map::Dir::RIGHT;
+        return PlanningTrayectory::Commands ::LEFT;
+    }
+    if(next.y == current.y-1 && PlanningTrayectory::map->heading == Map::Dir::DOWN){
+        PlanningTrayectory::map->heading = Map::Dir::RIGHT;
+        return PlanningTrayectory::Commands ::RIGHT;
+    }
 }

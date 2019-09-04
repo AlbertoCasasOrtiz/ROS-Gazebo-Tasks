@@ -1,8 +1,8 @@
-prefix=/usr/local
+prefix=/home/alberto/catkin_ws/install
 
 Name: planning_trayectory
 Description: Description of planning_trayectory
 Version: 0.0.0
 Cflags: 
-Libs: -L/usr/local/lib 
+Libs: -L/home/alberto/catkin_ws/install/lib 
 Requires: 

@@ -6,8 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/p2os_driver.dir/src/robot_params.cpp.o"
   "CMakeFiles/p2os_driver.dir/src/sip.cpp.o"
   "CMakeFiles/p2os_driver.dir/src/p2os_ptz.cpp.o"
-  "../devel/lib/p2os_driver/p2os_driver.pdb"
-  "../devel/lib/p2os_driver/p2os_driver"
+  "/home/alberto/catkin_ws/devel/lib/p2os_driver/p2os_driver.pdb"
+  "/home/alberto/catkin_ws/devel/lib/p2os_driver/p2os_driver"
 )
 
 # Per-language clean rules from dependency scanning.

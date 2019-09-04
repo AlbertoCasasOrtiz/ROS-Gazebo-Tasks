@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "tf;urdf;geometry_msgs;sensor_msgs;std_msgs;kdl_parser".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "p2os_urdf"
-PROJECT_SPACE_DIR = "/usr/local"
+PROJECT_SPACE_DIR = "/home/alberto/catkin_ws/install"
 PROJECT_VERSION = "2.1.1"
