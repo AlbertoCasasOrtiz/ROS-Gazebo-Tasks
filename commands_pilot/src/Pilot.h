@@ -72,7 +72,7 @@ public:
     //Constructor and destructor
     /// Constructor of pilot.
     Pilot(int argc, char **argv);
-    
+
     std::queue<std::string> commands;
 
 };

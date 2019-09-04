@@ -182,10 +182,10 @@ void OdometryMap::updateCurrentPoint(){
 			OdometryMap::current.y--;
 			break;
 		case Map::Dir::DOWN:
-			OdometryMap::current.y--;
+			OdometryMap::current.x--;
 			break;
 		case Map::Dir::RIGHT:
-			OdometryMap::current.x++;
+			OdometryMap::current.y++;
 			break;
 	}
 }
