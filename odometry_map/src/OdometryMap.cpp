@@ -28,7 +28,6 @@ OdometryMap::OdometryMap(int argc, char **argv) {
 	OdometryMap::current.x = 0;
 	OdometryMap::current.y = 0;
 
-	OdometryMap::error_turn = 0;
 
 	// Show stored point.
 	ROS_INFO("Stored point ([%i], [%i])", OdometryMap::current.x, OdometryMap::current.y);
@@ -36,7 +35,6 @@ OdometryMap::OdometryMap(int argc, char **argv) {
 	OdometryMap::map.addPoint(current);
 
 	OdometryMap::posX, OdometryMap::posY, OdometryMap::turnZ= 0;
-
 
     ros::init(argc, argv, "OdometryMap");
 

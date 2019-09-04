@@ -119,7 +119,10 @@ void PlanningTrayectory::printPath(std::vector<Node<Map::point> *> path) {
 std::vector<PlanningTrayectory::Commands> PlanningTrayectory::calculateCommands(std::vector<Node<Map::point>*> path) {
     std::vector<PlanningTrayectory::Commands> commands;
     for(int i = 1; i < path.size(); i++){
-        commands.push_back(PlanningTrayectory::nextPointCommand(path.at(i-1)->data, path.at(i)->data));
+        PlanningTrayectory::Commands command = PlanningTrayectory::nextPointCommand(path.at(i-1)->data, path.at(i)->data);
+        commands.push_back(command);
+        if(command == PlanningTrayectory::Commands::LEFT || command == PlanningTrayectory::Commands::RIGHT)
+            commands.push_back(Commands::FORWARD);
     }
 
     return commands;

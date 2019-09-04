@@ -1,5 +1,6 @@
 
 #ifndef ODOMETRY_MAP_SRC_ODOMETRYMAP_H
+#define ODOMETRY_MAP_SRC_ODOMETRYMAP_H_
 #include <ros/ros.h>
 #include <image_transport/image_transport.h>
 #include <nav_msgs/Odometry.h>
@@ -8,8 +9,7 @@
 #include <opencv2/opencv.hpp>
 
 #include <iomanip>
-	#include "Map.h"
-#define ODOMETRY_MAP_SRC_ODOMETRYMAP_H_
+#include "Map.h"
 
 class OdometryMap {
 private:
@@ -35,9 +35,6 @@ private:
 	void chooseDirection();
 
 	Map::Dir heading;
-	void exploreMap();
-
-	float error_turn;
 
 	int flag_forward;
 	int flag_turn;
