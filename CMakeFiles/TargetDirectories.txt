@@ -170,14 +170,6 @@
 /home/alberto/catkin_ws/src/odometry_map/CMakeFiles/rebuild_cache.dir
 /home/alberto/catkin_ws/src/odometry_map/CMakeFiles/odometry_map.dir
 /home/alberto/catkin_ws/src/odometry_map/CMakeFiles/install.dir
-/home/alberto/catkin_ws/src/potential_fields/CMakeFiles/install/strip.dir
-/home/alberto/catkin_ws/src/potential_fields/CMakeFiles/install/local.dir
-/home/alberto/catkin_ws/src/potential_fields/CMakeFiles/test.dir
-/home/alberto/catkin_ws/src/potential_fields/CMakeFiles/list_install_components.dir
-/home/alberto/catkin_ws/src/potential_fields/CMakeFiles/potential_fields.dir
-/home/alberto/catkin_ws/src/potential_fields/CMakeFiles/edit_cache.dir
-/home/alberto/catkin_ws/src/potential_fields/CMakeFiles/rebuild_cache.dir
-/home/alberto/catkin_ws/src/potential_fields/CMakeFiles/install.dir
 /home/alberto/catkin_ws/src/follow_color/CMakeFiles/install/strip.dir
 /home/alberto/catkin_ws/src/follow_color/CMakeFiles/install/local.dir
 /home/alberto/catkin_ws/src/follow_color/CMakeFiles/test.dir
