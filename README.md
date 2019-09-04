@@ -45,3 +45,24 @@ Execute ros+gazebo:
 Make robot follow objects:
 
 <code>rosrun potential_fields potential_fields</code>
+
+Exercise 4
+----------
+
+Make the robot go accross a full room to create a map with odometry. Later, use that map to find shotest paths between two points, generate a set of commands and execute them.
+
+Execute ros+gazebo:
+
+<code>roslaunch p2os_urdf pioneer3at.gazebo.launch</code>
+
+Make the robot follow the full map:
+
+<code> rosrun odometry_map odometry_map</code>
+
+Once has ended, the map has been created. Establish two points, origin and destiny with initial heading, and execute path finder and command genedator:
+
+<code> rosrun planning_trayectory planning_trayectory</code>
+
+It will generate a command.txt with the commands that the robot has to follow. Put the robot in the starting position and execute the pilot to take the robot to its goal:
+
+<code> rosrun command_pilot pilot</code>
