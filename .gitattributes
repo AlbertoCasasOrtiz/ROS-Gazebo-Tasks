@@ -1,0 +1,3 @@
+MakeFile linguist-detectable=false
+*.txt linguist-detectable=false
+*.cpp linguist-detectable=true
