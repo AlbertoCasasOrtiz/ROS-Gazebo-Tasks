@@ -26,6 +26,8 @@ public:
     void printCommands(std::vector<Commands> commands);
 
     Dir heading;
+
+    Commander();
 };
 
 

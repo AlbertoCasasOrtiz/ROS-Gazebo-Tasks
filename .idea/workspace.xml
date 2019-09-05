@@ -151,21 +151,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e3de900-996a-4497-842f-36f19788fcb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/a_star/src/AStar.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/a_star/src/AStar.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/a_star/src/AdjacencyGraph.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/a_star/src/AdjacencyGraph.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/a_star/src/Commander.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/a_star/src/Commander.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/a_star/src/Node.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/a_star/src/Node.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/a_star/src/Point.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/a_star/src/Point.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/a_star/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/src.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_star/src/Commander.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/a_star/src/Commander.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_star/src/Commander.h" beforeDir="false" afterPath="$PROJECT_DIR$/a_star/src/Commander.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_star/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/a_star/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands_pilot/src/Pilot.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/commands_pilot/src/Pilot.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2os_urdf/launch/pioneer3at.gazebo.launch" beforeDir="false" afterPath="$PROJECT_DIR$/p2os_urdf/launch/pioneer3at.gazebo.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2os_urdf/worlds/office_world.wordl" beforeDir="false" afterPath="$PROJECT_DIR$/p2os_urdf/worlds/office_world.world" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -193,30 +186,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/a_star/src/AStar.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-              <folding>
-                <element signature="e#41#59#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/a_star/src/AStar.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-              <folding>
-                <element signature="e#82#99#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/a_star/src/Node.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="508">
@@ -231,8 +200,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/a_star/src/Commander.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1353">
-              <caret line="91" column="21" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
+            <state relative-caret-position="558">
+              <caret line="96" column="66" selection-start-line="96" selection-start-column="66" selection-end-line="96" selection-end-column="66" />
               <folding>
                 <element signature="e#41#58#0" expanded="true" />
               </folding>
@@ -241,10 +210,45 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/a_star/src/Commander.h">
+        <entry file="file://$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="723">
+              <caret line="184" column="57" selection-start-line="184" selection-start-column="57" selection-end-line="184" selection-end-column="57" />
+              <folding>
+                <element signature="e#3147#3422#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/p2os_urdf/launch/pioneer3at_urdf.launch">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/p2os_urdf/launch/pioneer3at.gazebo.launch">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+              <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/commands_pilot/src/Pilot.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="78" column="60" selection-start-line="78" selection-start-column="60" selection-end-line="78" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/a_star/src/Commander.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
               <folding>
                 <element signature="e#90#108#0" expanded="true" />
               </folding>
@@ -255,8 +259,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/a_star/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="83" selection-start-line="9" selection-start-column="83" selection-end-line="9" selection-end-column="83" />
+            <state relative-caret-position="90">
+              <caret line="6" column="125" selection-start-line="6" selection-start-column="125" selection-end-line="6" selection-end-column="125" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -290,12 +294,15 @@
         <option value="$PROJECT_DIR$/a_star/src/Commands.cpp" />
         <option value="$PROJECT_DIR$/a_star/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/a_star/src/Commands.h" />
-        <option value="$PROJECT_DIR$/a_star/src/Commander.h" />
-        <option value="$PROJECT_DIR$/a_star/src/main.cpp" />
-        <option value="$PROJECT_DIR$/a_star/src/Commander.cpp" />
         <option value="$PROJECT_DIR$/a_star/src/Node.h" />
         <option value="$PROJECT_DIR$/a_star/src/AStar.cpp" />
         <option value="$PROJECT_DIR$/a_star/src/AStar.h" />
+        <option value="$PROJECT_DIR$/a_star/src/Commander.h" />
+        <option value="$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.cpp" />
+        <option value="$PROJECT_DIR$/p2os_urdf/launch/pioneer3at.gazebo.launch" />
+        <option value="$PROJECT_DIR$/a_star/src/Commander.cpp" />
+        <option value="$PROJECT_DIR$/a_star/src/main.cpp" />
+        <option value="$PROJECT_DIR$/commands_pilot/src/Pilot.cpp" />
       </list>
     </option>
   </component>
@@ -326,13 +333,13 @@
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="47feb1d3:ProjectViewModuleNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="a_star" type="462c0819:PsiDirectoryNode" />
+              <item name="commands_pilot" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="47feb1d3:ProjectViewModuleNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="a_star" type="462c0819:PsiDirectoryNode" />
+              <item name="commands_pilot" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -1099,12 +1106,12 @@
       <workItem from="1567646678140" duration="4155000" />
       <workItem from="1567650997378" duration="2203000" />
       <workItem from="1567684951699" duration="1323000" />
-      <workItem from="1567686578538" duration="11885000" />
+      <workItem from="1567686578538" duration="15966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19566000" />
+    <option name="totallyTimeSpent" value="23647000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1161,13 +1168,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/planning_trayectory/src/Array.h" />
     <entry file="file://$PROJECT_DIR$/planning_trayectory/src/Array.cpp" />
-    <entry file="file://$PROJECT_DIR$/commands_pilot/src/Pilot.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="124" column="28" lean-forward="true" selection-start-line="124" selection-start-column="28" selection-end-line="133" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/odometry_map/src/Map.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1285,55 +1285,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/a_star/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="83" selection-start-line="9" selection-start-column="83" selection-end-line="9" selection-end-column="83" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a_star/src/Commander.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-          <folding>
-            <element signature="e#90#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a_star/src/Commander.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1353">
-          <caret line="91" column="21" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
-          <folding>
-            <element signature="e#41#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="89" column="4" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="43" />
-          <folding>
-            <element signature="e#3147#3422#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/planning_trayectory/src/Node.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/a_star/src/Node.h">
+    <entry file="file://$PROJECT_DIR$/a_star/src/AStar.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+        <state relative-caret-position="510">
+          <caret line="34" column="52" lean-forward="true" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
           <folding>
-            <element signature="e#80#97#0" expanded="true" />
+            <element signature="e#82#99#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1348,13 +1308,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/a_star/src/AStar.h">
+    <entry file="file://$PROJECT_DIR$/a_star/src/Node.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        <state relative-caret-position="508">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
-            <element signature="e#82#99#0" expanded="true" />
+            <element signature="e#80#97#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a_star/src/Commander.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+          <folding>
+            <element signature="e#90#108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2os_urdf/launch/pioneer3at_urdf.launch">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2os_urdf/launch/pioneer3at.gazebo.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="184" column="57" selection-start-line="184" selection-start-column="57" selection-end-line="184" selection-end-column="57" />
+          <folding>
+            <element signature="e#3147#3422#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a_star/src/Commander.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="96" column="66" selection-start-line="96" selection-start-column="66" selection-end-line="96" selection-end-column="66" />
+          <folding>
+            <element signature="e#41#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a_star/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="125" selection-start-line="6" selection-start-column="125" selection-end-line="6" selection-end-column="125" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands_pilot/src/Pilot.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="78" column="60" selection-start-line="78" selection-start-column="60" selection-end-line="78" selection-end-column="60" />
         </state>
       </provider>
     </entry>

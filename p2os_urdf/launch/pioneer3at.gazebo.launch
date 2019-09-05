@@ -14,7 +14,8 @@
 	<!--arg name="world_name" value="$(find p2os_urdf)/worlds/slalom_bars.world"/-->	    
 	<!-- arg name="world_name" value="$(find p2os_urdf)/worlds/yellow_ball.world"/-->	        
 	<!--arg name="world_name" value="$(find p2os_urdf)/worlds/potential_fields.world"/-->	        
-	<arg name="world_name" value="$(find p2os_urdf)/worlds/world_odometry.world"/>	    
+	<!--arg name="world_name" value="$(find p2os_urdf)/worlds/world_odometry.world"/-->
+	<arg name="world_name" value="$(find p2os_urdf)/worlds/office_world.world"/>
 	<arg name="gui" value="true"/>	  
   </include>	
 

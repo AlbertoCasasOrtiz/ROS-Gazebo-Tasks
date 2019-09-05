@@ -182,7 +182,7 @@ PlanningTrayectory::Commands PlanningTrayectory::nextPointCommand(Map::point cur
         return PlanningTrayectory::Commands ::FORWARD;
     }
     if(next.y == current.y+1 && PlanningTrayectory::map->heading == Map::Dir::DOWN){
-        PlanningTrayectory::map->heading = Map::Dir::RIGHT;
+        PlanningTrayectory::map->heading = Map::Dir::LEFT;
         return PlanningTrayectory::Commands ::LEFT;
     }
     if(next.y == current.y-1 && PlanningTrayectory::map->heading == Map::Dir::DOWN){

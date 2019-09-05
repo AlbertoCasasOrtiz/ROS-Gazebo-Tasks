@@ -76,7 +76,7 @@ void Pilot::odomCallback(const nav_msgs::Odometry::ConstPtr &msg) {
             Pilot::goForward();
 
             // If advanced one unit...
-            if (fabs(posX - msg->pose.pose.position.x) > 2.0 || fabs(posY - msg->pose.pose.position.y) > 2.0) {
+            if (fabs(posX - msg->pose.pose.position.x) > 0.9 || fabs(posY - msg->pose.pose.position.y) > 0.9) {
                 Pilot::flag_init = 1;
                 Pilot::commands.pop();
             }

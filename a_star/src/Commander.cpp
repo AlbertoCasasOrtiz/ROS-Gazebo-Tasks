@@ -33,67 +33,73 @@ std::vector<Commander::Commands> Commander::calculateCommands(std::vector<Node<P
 
 
 Commander::Commands Commander::nextPointCommand(Point current, Point next) {
-    if (next.x > current.x && Commander::heading == Commander::Dir::UP) {
+    if (next.y > current.y && Commander::heading == Commander::Dir::UP) {
         Commander::heading = Commander::Dir::UP;
         return Commander::Commands::FORWARD;
     }
-    if (next.y < current.y && Commander::heading == Commander::Dir::UP) {
-        Commander::heading = Commander::Dir::LEFT;
-        return Commander::Commands::LEFT;
-    }
-    if (next.y > current.y&& Commander::heading == Commander::Dir::UP) {
+    if (next.x < current.x && Commander::heading == Commander::Dir::UP) {
         Commander::heading = Commander::Dir::RIGHT;
-        return Commander::Commands::RIGHT;
-    }
-
-    if (next.x > current.x&& Commander::heading == Commander::Dir::LEFT) {
-        Commander::heading = Commander::Dir::UP;
-        return Commander::Commands::RIGHT;
-    }
-    if (next.x < current.x && Commander::heading == Commander::Dir::LEFT) {
-        Commander::heading = Commander::Dir::DOWN;
         return Commander::Commands::LEFT;
     }
-    if (next.y < current.y && Commander::heading == Commander::Dir::LEFT) {
+    if (next.x > current.x && Commander::heading == Commander::Dir::UP) {
         Commander::heading = Commander::Dir::LEFT;
-        return Commander::Commands::FORWARD;
+        return Commander::Commands::RIGHT;
     }
 
-    if (next.x > current.x && Commander::heading == Commander::Dir::RIGHT) {
+    if (next.y > current.y && Commander::heading == Commander::Dir::RIGHT) {
         Commander::heading = Commander::Dir::UP;
+        return Commander::Commands::RIGHT;
+    }
+    if (next.y < current.y && Commander::heading == Commander::Dir::RIGHT) {
+        Commander::heading = Commander::Dir::DOWN;
         return Commander::Commands::LEFT;
     }
     if (next.x < current.x && Commander::heading == Commander::Dir::RIGHT) {
-        Commander::heading = Commander::Dir::DOWN;
-        return Commander::Commands::RIGHT;
-    }
-    if (next.y > current.y && Commander::heading == Commander::Dir::RIGHT) {
         Commander::heading = Commander::Dir::RIGHT;
         return Commander::Commands::FORWARD;
     }
 
-    if (next.x < current.x && Commander::heading == Commander::Dir::DOWN) {
+    if (next.y > current.y && Commander::heading == Commander::Dir::LEFT) {
+        Commander::heading = Commander::Dir::UP;
+        return Commander::Commands::LEFT;
+    }
+    if (next.y < current.y && Commander::heading == Commander::Dir::LEFT) {
+        Commander::heading = Commander::Dir::DOWN;
+        return Commander::Commands::RIGHT;
+    }
+    if (next.x > current.x && Commander::heading == Commander::Dir::LEFT) {
+        Commander::heading = Commander::Dir::LEFT;
+        return Commander::Commands::FORWARD;
+    }
+
+    if (next.y < current.y && Commander::heading == Commander::Dir::DOWN) {
         Commander::heading = Commander::Dir::DOWN;
         return Commander::Commands::FORWARD;
     }
-    if (next.y > current.y && Commander::heading == Commander::Dir::DOWN) {
+    if (next.x > current.x && Commander::heading == Commander::Dir::DOWN) {
         Commander::heading = Commander::Dir::RIGHT;
         return Commander::Commands::LEFT;
     }
-    if (next.y < current.y && Commander::heading == Commander::Dir::DOWN) {
-        Commander::heading = Commander::Dir::RIGHT;
+    if (next.x < current.x && Commander::heading == Commander::Dir::DOWN) {
+        Commander::heading = Commander::Dir::LEFT;
         return Commander::Commands::RIGHT;
     }
+
+    return Commander::Commands ::FORWARD;
 }
 
 
 void Commander::printCommands(std::vector<Commander::Commands> commands) {
     std::ofstream file("commands.txt");
-    ROS_INFO("HOLA");
     for(int i = 0; i < commands.size(); i++){
         Commander::Commands command = commands.at(i);
         file << Commander::commandToString(command) << "\n";
+        ROS_INFO("%s", Commander::commandToString(command).c_str());
     }
     file.close();
 
+}
+
+Commander::Commander() {
+    Commander::heading = Commander::Dir::DOWN;
 }
