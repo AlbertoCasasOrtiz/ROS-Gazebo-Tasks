@@ -12,18 +12,38 @@
 
 class AdjacencyGraph {
 public:
-    std::vector<Node<Point>*> graph;
-    std::vector<std::vector<int>> adjacencies;
-
-    void readNodes();
-    void readAdjacencies();
-    std::vector<std::string> split(std::string str, const std::string& del);
+    // Class methods-
+    /// Get adjacent nodes to a given node.
+    /// \param node Given node.
+    /// \return Adjacents to given node.
     std::vector<Node<Point>*> getAdjacents(Node<Point> *node);
 
+    // IO functions
+    /// Write nodes into a file.
+    void printNodes();
+    /// Write adjacencies into a file.
+    void printAdjacencies();
+    /// Read nodes from a file.
+    void readNodes();
+    /// Read adjacents from a file.
+    void readAdjacencies();
+
+    // Helper functions
+    /// Split string with a delimiter.
+    /// \param str String to be splitted.
+    /// \param del Delimiter of the split.
+    /// \return Vector with parts of the string.
+    std::vector<std::string> split(std::string str, const std::string& del);
+
+    //Constructor and Destructor
+    /// Destructor of adjacency graph.
     ~AdjacencyGraph();
 
-    void printNodes();
-    void printAdjacencies();
+    /// Graph containing nodes.
+    std::vector<Node<Point>*> graph;
+    /// Matrix containing adjacencies.
+    std::vector<std::vector<int>> adjacencies;
+
 };
 
 
