@@ -39,6 +39,10 @@ public:
     /// \param command Command to be parsed.
     /// \return String representation of the command.
     std::string commandToString(Commands command);
+    /// Parse direction into string,
+    /// \param direction Direction to be parsed,
+    /// \return String representation of the direction.
+    std::string dirToString(Commander::Dir direction);
 
     //Constructor and Destructor
     /// Constructor for class Commander.

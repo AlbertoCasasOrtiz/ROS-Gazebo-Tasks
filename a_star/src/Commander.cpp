@@ -18,6 +18,18 @@ std::string Commander::commandToString(Commander::Commands command) {
     }
 }
 
+std::string Commander::dirToString(Commander::Dir direction){
+    switch(direction){
+        case Dir::UP:
+            return "UP";
+        case Dir::DOWN:
+            return "DOWN";
+        case Dir::LEFT:
+            return "LEFT";
+        case Dir::RIGHT:
+            return "RIGHT";
+    }
+}
 
 std::vector<Commander::Commands> Commander::calculateCommands(std::vector<Node<Point>*> path) {
     std::vector<Commander::Commands> commands;
@@ -33,6 +45,9 @@ std::vector<Commander::Commands> Commander::calculateCommands(std::vector<Node<P
 
 
 Commander::Commands Commander::nextPointCommand(Point current, Point next) {
+
+    ROS_INFO("HEADING TO: [%s]", Commander::dirToString(Commander::heading).c_str());
+
     if (next.y > current.y && Commander::heading == Commander::Dir::UP) {
         Commander::heading = Commander::Dir::UP;
         return Commander::Commands::FORWARD;
@@ -47,11 +62,11 @@ Commander::Commands Commander::nextPointCommand(Point current, Point next) {
     }
 
     if (next.y > current.y && Commander::heading == Commander::Dir::RIGHT) {
-        Commander::heading = Commander::Dir::UP;
+        Commander::heading = Commander::Dir::DOWN;
         return Commander::Commands::RIGHT;
     }
     if (next.y < current.y && Commander::heading == Commander::Dir::RIGHT) {
-        Commander::heading = Commander::Dir::DOWN;
+        Commander::heading = Commander::Dir::UP;
         return Commander::Commands::LEFT;
     }
     if (next.x < current.x && Commander::heading == Commander::Dir::RIGHT) {
@@ -60,11 +75,11 @@ Commander::Commands Commander::nextPointCommand(Point current, Point next) {
     }
 
     if (next.y > current.y && Commander::heading == Commander::Dir::LEFT) {
-        Commander::heading = Commander::Dir::UP;
+        Commander::heading = Commander::Dir::DOWN;
         return Commander::Commands::LEFT;
     }
     if (next.y < current.y && Commander::heading == Commander::Dir::LEFT) {
-        Commander::heading = Commander::Dir::DOWN;
+        Commander::heading = Commander::Dir::UP;
         return Commander::Commands::RIGHT;
     }
     if (next.x > current.x && Commander::heading == Commander::Dir::LEFT) {
@@ -73,7 +88,7 @@ Commander::Commands Commander::nextPointCommand(Point current, Point next) {
     }
 
     if (next.y < current.y && Commander::heading == Commander::Dir::DOWN) {
-        Commander::heading = Commander::Dir::DOWN;
+        Commander::heading = Commander::Dir::UP;
         return Commander::Commands::FORWARD;
     }
     if (next.x > current.x && Commander::heading == Commander::Dir::DOWN) {
