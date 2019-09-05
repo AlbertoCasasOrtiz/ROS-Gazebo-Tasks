@@ -150,16 +150,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e3de900-996a-4497-842f-36f19788fcb6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a_star/src/Commander.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/a_star/src/Commander.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a_star/src/Commander.h" beforeDir="false" afterPath="$PROJECT_DIR$/a_star/src/Commander.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a_star/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/a_star/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands_pilot/src/Pilot.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/commands_pilot/src/Pilot.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2os_urdf/launch/pioneer3at.gazebo.launch" beforeDir="false" afterPath="$PROJECT_DIR$/p2os_urdf/launch/pioneer3at.gazebo.launch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2os_urdf/worlds/office_world.wordl" beforeDir="false" afterPath="$PROJECT_DIR$/p2os_urdf/worlds/office_world.world" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/planning_trayectory/src/PlanningTrayectory.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="9e3de900-996a-4497-842f-36f19788fcb6" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
     <ignored path="$PROJECT_DIR$/../build/" />
@@ -1106,12 +1097,12 @@
       <workItem from="1567646678140" duration="4155000" />
       <workItem from="1567650997378" duration="2203000" />
       <workItem from="1567684951699" duration="1323000" />
-      <workItem from="1567686578538" duration="15966000" />
+      <workItem from="1567686578538" duration="16174000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23647000" />
+    <option name="totallyTimeSpent" value="23855000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
