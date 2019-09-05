@@ -1,7 +1,7 @@
 Description
 -----------
 
-Pioneer3AT with camera and keyboard control. For each exercise change world in pioneer3at.gazebo.launch.
+PSet of exercises in ROS controlling a pioneer3at from [p2os](https://github.com/allenh1/p2os)
 
 Exercise 1
 ----------
